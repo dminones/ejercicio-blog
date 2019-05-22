@@ -17,6 +17,7 @@ app.use(function(req, res, next) {
 });
 
 app.get("/usuarios", controladorUsuarios.consulta);
+app.get("/usuarios/:username", controladorUsuarios.byUsername);
 app.get("/posts", controladorPosts.pedirPosts);
 
 app.listen(port, function() {
