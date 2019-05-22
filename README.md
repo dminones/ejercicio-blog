@@ -5,7 +5,9 @@ App fullstack para visualizar un ejercicio de feed
 ## Getting started
 
 - Clonar proyecto
-- Crear db y configurar datos en `/server/conexion.js`
+- Crear db
+- Copiar  `/server/conexion.example.js` a  `/server/conexion.js`
+- Configurar datos de db en  `/server/conexion.js`
 - Ejecutar scripts de db `/db/*`
 - `npm install`
 - `npm start`
