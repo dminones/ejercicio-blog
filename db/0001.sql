@@ -83,6 +83,8 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   `imagen` varchar(45) DEFAULT NULL,
+  `username` varchar(45) NOT NULL,
+  `bio` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -93,7 +95,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'dario','imagen_dario.jpg'),(2,'wendy','imagen_dario.jpg'),(5,'dasdsa','sss');
+INSERT INTO `usuarios` VALUES (1,'dario miñones','imagen_dario.jpg','dminones','La bio de dario'),(2,'wendy ','imagen_dario.jpg','wendy','la bio de wen'),(5,'dasdsa','sss','userdasda',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -106,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-20 20:49:12
+-- Dump completed on 2019-05-22 20:16:46
