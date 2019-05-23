@@ -14,6 +14,8 @@ h1 {
   font-weight: normal;
 }
 
+h1:not(.site-title):before,
+
 h1 .grey {
   color: #767676;
   display: inline;
