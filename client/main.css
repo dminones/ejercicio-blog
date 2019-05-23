@@ -21,6 +21,14 @@ h1 .grey {
   display: inline;
 }
 
+#contenido {
+  margin: 20px;
+}
+
+.likes1 {
+  margin-left: 5px;
+}
+
 .container {
   max-width: 960px;
   margin: 0 calc(10% + 60px);
