@@ -1,9 +1,4 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -26,4 +21,25 @@ h1 .grey {
 
 header {
   margin: 40px 0;
+}
+
+#imagen img {
+  float: left;
+  height: 50px;
+  width: 50px;
+  margin: 15px;
+  background-color: goldenrod;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+#usuarios {
+  color: blue;
+}
+
+#usuarios-bio {
+  color: gray;
 }
