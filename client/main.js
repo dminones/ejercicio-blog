@@ -9,11 +9,7 @@ $.getJSON(servidor + '/posts', (response) => {
 });
 
 $.getJSON(servidor + `/usuarios/${userName}`, (response) => {
-	const usuarios = response.nombre;
-	const imagen = response.imagen;
-	const usuariosBio =
-		'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, itaque. Commodi vero recusandae tempora hic architecto facilis quidem quas quibusdam?';
-	$('#usuarios').html(` <h3> ${usuarios} </h3>`);
-	$('#usuarios-bio').html(`<p> ${usuariosBio} </p>`);
-	$('#imagen').html(`<img src=${imagen}> `);
+	$('#usuarios h3').html(`${response.nombre}`);
+	$('#usuarios-bio p').html(`${response.bio}`);
+	$('#imagen img').attr(`src`, `${response.imagen}`);
 });
