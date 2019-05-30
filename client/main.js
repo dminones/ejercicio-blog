@@ -9,7 +9,7 @@ $.getJSON(servidor + '/posts', (response) => {
 });
 
 $.getJSON(servidor + `/usuarios/${userName}`, (response) => {
-	$('#usuarios h3').html(`${response.nombre}`);
-	$('#usuarios-bio p').html(`${response.bio}`);
-	$('#imagen img').attr(`src`, `${response.imagen}`);
+	$('#usuarios h3').html(response.nombre);
+	$('#usuarios-bio p').html(response.bio);
+	$('#imagen img').attr(`src`, response.imagen);
 });
