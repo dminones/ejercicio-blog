@@ -9,7 +9,7 @@ const getPostHtml = post => {
           <hr width="10%"> 
             <h1 class="tituloPost">${post.titulo}</h1>
             <p>${post.contenido}</p>
-            <span><p><img src="https://img.icons8.com/material/15/000000/administrator-male.png">${post.nombre}</p><p><img src="https://img.icons8.com/material/15/000000/alarm-clock.png">${post.fechaPost}</p><p><img src="https://img.icons8.com/material/15/000000/opened-folder.png">${post.categoria}</p></span>
+            <span><p><img src="https://img.icons8.com/material/15/000000/administrator-male.png">${post.usuario_nombre}</p><p><img src="https://img.icons8.com/material/15/000000/alarm-clock.png">${post.fechaPost}</p><p><img src="https://img.icons8.com/material/15/000000/opened-folder.png">${post.categoria}</p></span>
         </div>
       </div>
   `
