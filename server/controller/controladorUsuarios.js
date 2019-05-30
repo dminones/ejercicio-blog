@@ -4,8 +4,8 @@ function consulta(req, res) {
 
   con.query(sql, function(error, respuesta, fields) {
     if (error) {
-      console.log("Hubo un error en la conexion", error.message);
-      return res.status(404).res.send("hubo un error en la conexion");
+	  console.log("Hubo un error en la conexion", error.message);
+      return res.status(404).send("hubo un error en la conexion");
     }
     var response = {
       usuarios: respuesta
