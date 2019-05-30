@@ -4,6 +4,12 @@ body {
     sans-serif;
 }
 
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
 h1 {
   font-size: 16px;
   font-weight: normal;
@@ -43,3 +49,28 @@ header {
 #usuarios-bio {
   color: gray;
 }
+span {
+  display: flex;
+  justify-content: flex-start;
+}
+
+span p {
+  margin: 20px;
+  font-weight: bold;
+  font-size: 13px;
+  color: grey;
+  margin-left: 0%;
+  text-transform: capitalize;
+}
+
+.tituloPost {
+  font-weight: bolder;
+  font-size: 40px;
+  text-transform: capitalize;
+
+}
+
+hr {
+  margin-left: 0%;
+}
+

@@ -16,9 +16,18 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use(
+  parser.urlencoded({
+    extended: true
+  })
+);
+
+app.use(parser.json());
+
 app.get("/usuarios", controladorUsuarios.consulta);
 app.get("/usuarios/:username", controladorUsuarios.byUsername);
-app.get("/posts", controladorPosts.pedirPosts);
+app.get("/posts", controladorPosts.listar);
+app.post("/posts", controladorPosts.crear);
 
 app.listen(port, function() {
   console.log("escuchando en el puerto" + port);
