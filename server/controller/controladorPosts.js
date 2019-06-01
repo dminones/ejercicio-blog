@@ -28,7 +28,18 @@ function crear(req, res) {
   });
 }
 
+function eliminar(req, res) {
+  const data = req.params.id;
+ con.query("delete from test_acamica.post where id=" + data, (error, respuesta) => {
+    if (error) {
+      return res.status(404).send(error);
+    }
+    res.send(JSON.stringify(respuesta));
+ });
+}
+
 module.exports = {
   listar,
-  crear
+  crear,
+  eliminar
 };
