@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 5.7.26, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.15, for macos10.14 (x86_64)
 --
--- Host: 127.0.0.1    Database: test_acamica
+-- Host: localhost    Database: facebook
 -- ------------------------------------------------------
--- Server version	5.7.26-0ubuntu0.18.04.1
+-- Server version	8.0.15
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+ SET NAMES utf8 ;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `likes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `likes` (
   `id_post` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
@@ -48,7 +48,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `post`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `post` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(45) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `post` (
   `categoria` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_post_1_idx` (`usuario_id`),
-  CONSTRAINT `fk_post_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON UPDATE NO ACTION
+  CONSTRAINT `fk_post_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -78,11 +78,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+ SET character_set_client = utf8mb4 ;
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
-  `imagen` varchar(45) DEFAULT NULL,
+  `imagen` varchar(256) DEFAULT NULL,
   `username` varchar(45) NOT NULL,
   `bio` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -95,7 +95,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'dario miñones','imagen_dario.jpg','dminones','La bio de dario'),(2,'wendy ','imagen_dario.jpg','wendy','la bio de wen'),(5,'dasdsa','sss','userdasda',NULL);
+INSERT INTO `usuarios` VALUES (1,'dario miñones','https://avatars1.githubusercontent.com/u/1731297?s=400&v=4','dminones','La bio de dario'),(2,'wendy ','http://cms.ysu.edu/sites/default/files/images/administrative-offices/kilcawley-center/Wendys-Logo.png','wendy','la bio de wen'),(5,'dasdsa','sss','userdasda',NULL);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -108,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-22 20:16:46
+-- Dump completed on 2019-05-29 22:02:01
