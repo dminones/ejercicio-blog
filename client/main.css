@@ -77,11 +77,19 @@ hr {
 #create-h1{
   text-align: center;
   font-size: 25px;
+  margin-top: 150px;
 }
 
 #create-user {
   text-align: center;
 }
 .input {
-  width: 20%;
+  width: 30%;
+  height: 40px;
 }
+
+#create-button{
+  margin: 10px;
+  width: 100px;
+}
+

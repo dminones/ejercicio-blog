@@ -10,15 +10,17 @@
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <title>Edicion de usuario</title>
 </head>
-<body>
-    <h1 id="create-h1">Agregar usario</h1>
-    <div id="create-user">
+<body id="createUser">
+    <h1 class = "h1" id="create-h1">Agregar usuario</h1>
+    <div id="create-user" >
     <form id="create-form" method="post">
-        <input class = "input" type="text" id = "nombre" name = "nombre" placeholder="ingresa tu nombre y apellido" ><br>
-        <input class = "input" type="text" id = "imagen" name = "imagen" placeholder="ingresa tu imagen"><br>
-        <input class = "input" type="text" id = "userName" name = "userName" placeholder="ingresa tu user"><br>
-        <input class = "input" type="text" id = "bio" name ="bio" placeholder="ingresa tu bio"><br>
-        <button type="submit">Crear</button>
+    <div class="form-group">
+        <input class = "input" type="text" id = "nombre" name = "nombre" placeholder="ingresa tu nombre y apellido" required><br>
+        <input class = "input" type="text" id = "imagen" name = "imagen" placeholder="ingresa tu imagen" required><br>
+        <input class = "input" type="text" id = "userName" name = "userName" placeholder="ingresa tu user" required><br>
+        <input class = "input" type="text" id = "bio" name ="bio" placeholder="ingresa tu bio" required><br>
+        <button type="submit" id="create-button" class="btn btn-primary" required>Crear</button>
+    </div>
     </form>
     </div>
 
