@@ -16,19 +16,51 @@ function listar(req, res) {
 
 function crear(req, res) {
   const data = req.body;
-  let sql = `insert into post (titulo,contenido, usuario_id) values ('${
-    data.titulo
-  }','${data.contenido}',1)`;
+  const usuario = data.usuario;
+  const categoria = data.categoria;
+  let usuarioId;
+  con.query("select id from test_acamica.usuarios where nombre = '" + usuario + "'", (error, respuesta) => {
+    if (error) {
+      return res.status(404).send(error);
+    }
+    usuarioId = respuesta[0].id;
+    let sql = `insert into post (titulo,contenido, usuario_id, categoria) values ('${data.titulo}','${data.contenido}','${usuarioId}', '${categoria}')`;
 
-  con.query(sql, (error, respuesta) => {
+    con.query(sql, (error, respuesta) => {
+      if (error) {
+        return res.status(404).send(error);
+      }
+      res.send(JSON.stringify(respuesta));
+    });
+  })
+}
+
+function eliminar(req, res) {
+  const data = req.params.id;
+ con.query("delete from test_acamica.post where id=" + data, (error, respuesta) => {
     if (error) {
       return res.status(404).send(error);
     }
     res.send(JSON.stringify(respuesta));
-  });
+ });
 }
+
+function consulta(req, res) {
+ con.query("select * from test_acamica.usuarios", (error, respuesta) => {
+    if (error) {
+      return res.status(404).send(error);
+    }
+    let response = {
+      usuarios: respuesta
+    };
+    res.send(JSON.stringify(response));
+ });
+}
+
 
 module.exports = {
   listar,
-  crear
+  crear,
+  eliminar,
+  consulta
 };
