@@ -14,6 +14,27 @@ function listar(req, res) {
   });
 }
 
+function listarUnPost(req,res){
+  var postId = parseInt(req.params.id)
+  var sqlPost = "SELECT A.*, B.nombre AS usuario_nombre FROM post AS A LEFT JOIN usuarios AS B ON B.id = A.usuario_id WHERE A.id = " + postId
+
+  con.query(sqlPost, function(error, resultado, fields){
+
+    if(error){
+      return res.status(404).send(error)
+    }
+
+    let response = {
+      post: resultado
+    };
+
+    res.send(JSON.stringify(response))
+
+  })
+  
+
+}
+
 function crear(req, res) {
   const data = req.body;
   let sql = `insert into post (titulo,contenido, usuario_id) values ('${
@@ -30,5 +51,6 @@ function crear(req, res) {
 
 module.exports = {
   listar,
-  crear
+  crear,
+  listarUnPost
 };
