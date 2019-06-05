@@ -27,3 +27,5 @@ $.getJSON(servidor + `/usuarios/${userName}`, (response) => {
 	$('#usuarios-bio p').html(response.bio);
 	$('#imagen img').attr(`src`, response.imagen);
 });
+
+

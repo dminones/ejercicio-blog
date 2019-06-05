@@ -28,6 +28,7 @@ app.get("/usuarios", controladorUsuarios.consulta);
 app.get("/usuarios/:username", controladorUsuarios.byUsername);
 app.get("/posts", controladorPosts.listar);
 app.post("/posts", controladorPosts.crear);
+app.post("/createuser", controladorUsuarios.createUser);
 
 app.listen(port, function() {
   console.log("escuchando en el puerto" + port);
