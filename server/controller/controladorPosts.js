@@ -22,14 +22,12 @@ function listarUnPost(req,res){
 
     if(error){
       return res.status(404).send(error)
-    }
-
-    let response = {
-      post: resultado
     };
-
-    res.send(JSON.stringify(response))
-
+    if(resultado.lehgth == 0){
+      //falta poner el tipo de error
+    }else{
+      res.send(JSON.stringify(resultado))
+    }
   })
   
 
