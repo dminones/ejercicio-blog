@@ -21,16 +21,17 @@ function listarUnPost(req,res){
   con.query(sqlPost, function(error, resultado, fields){
 
     if(error){
-      return res.status(404).send(error)
-    };
-    if(resultado.lehgth == 0){
-      //falta poner el tipo de error
-    }else{
-      res.send(JSON.stringify(resultado))
+      return res.status(504).send(error)
     }
+    
+    if(resultado.length <= 0){
+      return res.status(404).send('Not found.')
+    };
+       
+    res.send(JSON.stringify(resultado[0]))
+    
   })
   
-
 }
 
 function crear(req, res) {

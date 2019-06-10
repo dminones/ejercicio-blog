@@ -30,7 +30,8 @@ $.getJSON(servidor + `/usuarios/${userName}`, (response) => {
 
 $.getJSON(servidor + `/post/${idPost}`, (response)=>{
 
-  const post = response[0]
+  const post = response
+  
   $("#post").html(getPostHtml(post))
 
 
