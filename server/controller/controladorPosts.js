@@ -14,6 +14,26 @@ function listar(req, res) {
   });
 }
 
+function listarUnPost(req,res){
+  var postId = parseInt(req.params.id)
+  var sqlPost = "SELECT A.*, B.nombre AS usuario_nombre FROM post AS A LEFT JOIN usuarios AS B ON B.id = A.usuario_id WHERE A.id = " + postId
+
+  con.query(sqlPost, function(error, resultado, fields){
+
+    if(error){
+      return res.status(504).send(error)
+    }
+    
+    if(resultado.length <= 0){
+      return res.status(404).send('Not found.')
+    };
+       
+    res.send(JSON.stringify(resultado[0]))
+    
+  })
+  
+}
+
 function crear(req, res) {
   const data = req.body;
   let sql = `insert into post (titulo,contenido, usuario_id) values ('${
@@ -30,5 +50,6 @@ function crear(req, res) {
 
 module.exports = {
   listar,
-  crear
+  crear,
+  listarUnPost
 };
