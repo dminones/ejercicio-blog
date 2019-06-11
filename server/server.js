@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const parser = require("body-parser");
-const port = "8080";
+const port = process.env.PORT || '8080';
 const controladorUsuarios = require("./controller/controladorUsuarios");
 const controladorPosts = require("./controller/controladorPosts");
 
